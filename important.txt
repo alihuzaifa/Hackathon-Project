@@ -1,0 +1,286 @@
+<div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 offset-0 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-0">
+                            <div class="card w-100">
+                                <img src="image/cards/card.webp" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Class Details</h5>
+                                    <h5 class="card-text h6">Class Timing: <span>9 to 11</span></h5>
+                                    <h5 class="card-text h6">Class Schedule: <span>Mon Wed Fri</span></h5>
+                                    <h5 class="card-text h6">Teacher Name: <span>Sir Haider</span></h5>
+                                    <h5 class="card-text h6">Section: <span>A</span></h5>
+                                    <h5 class="card-text h6">Course Name: <span>Web and Mobile</span></h5>
+                                    <h5 class="card-text h6">Batch: <span>8</span></h5>
+
+
+
+                                    <a href="#" class="btn btn-primary">Edit</a>
+                                    <a href="#" class="btn btn-primary">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col"></div>
+                        <div class="col"></div> -->
+                    </div>
+                </div>
+
+
+
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-2">Name:</div>
+                        <div class="col-2">Roll Number:</div>
+                        <div class="col-2">Contact Number:</div>
+                        <div class="col-2">CNIC Number:</div>
+                        <div class="col-2">Course Name:</div>
+                        <div class="col-2">Class:</div>
+                        <!-- <div class="col"></div> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-2">Huzaifa</div>
+                        <div class="col-2">1122334455</div>
+                        <div class="col-2">03111260357</div>
+                        <div class="col-2">0-11-234-23567</div>
+                        <div class="col-2">Web And Mobile</div>
+                        <div class="col-2">Sir Haider</div>
+                        <!-- <div class="col"></div> -->
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+                class="col-12 offset-0 col-sm-8 offset-sm-2 col-md-6 col-lg-4 offset-lg-0 my-2 my-sm-2 my-md-2 my-lg-0">
+                <div class="card">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="name fs-3 text-center my-1">Web And Mobile App</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div type="button" class="col btn btn-outline-dark" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop-3">Show Details
+                                <!-- <button type="button" class=""></button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="col-12 offset-0 col-sm-8 offset-sm-2 col-md-6 col-lg-4 offset-lg-0 my-2 my-sm-2 my-md-2 my-lg-0">
+                <div class="card">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="name fs-3 text-center my-1">Web And Mobile App</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div type="button" class="col btn btn-outline-dark">Show Details
+                                <!-- <button type="button" class=""></button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="col-12 offset-0 col-sm-8 offset-sm-2 col-md-6 col-lg-4 offset-lg-0 my-2 my-sm-2 my-md-2 my-lg-0">
+                <div class="card">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="name fs-3 text-center my-1">Web And Mobile App</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div type="button" class="col btn btn-outline-dark">Show Details
+                                <!-- <button type="button" class=""></button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+swal("Write something here:", {
+  content: "input",
+})
+.then((value) => {
+  swal(`You typed: ${value}`);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

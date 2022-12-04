@@ -1,0 +1,59 @@
+/* ===================================  Login Page  ======================================= */
+/* Main Container in login page */
+section {
+    background-color: #00ffff !important;
+}
+
+/* Side imag */
+.img-admin {
+    border-radius: 1rem 0 0 1rem;
+    height: 100% !important;
+}
+
+/* Loader */
+.loader {
+    border: 5px solid #ffffff;
+    border-top: 5px solid #444242;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* All Errors */
+.error {
+    margin-top: 5px !important;
+    color: #ff0000 !important;
+    border-radius: 5px;
+    font-weight: 600;
+    display: none;
+}
+
+
+
+/* ================================ Admin Page ================================= */
+#user-image{
+    width: 100% !important;
+    height: 250px !important;
+    /* border-radius: 50%; */
+}
+.card-text{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+/* ================================ Attendanece page ================================= */
+.modal-box{
+    background-color: #00ffff;
+}

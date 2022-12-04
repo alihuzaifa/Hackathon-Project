@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <!-- Firebase -->
+    <script src="./firebase/firebase-config.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Saylani</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="./checkattendance.html"><button type="button"
+                                class="btn btn-outline-light fw-bold text-dark shadow me-2" id="add-students">
+                                Check Student Attendance
+                            </button></a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-light fw-bold text-dark shadow" id="add-students">
+                            Transfer
+                        </button>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2 search-data" type="search" placeholder="Enter Roll Number"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" id="search" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid my-3 d-none">
+        <div class="row">
+            <div class="col fs-2 fw-bold text-center py-3 bg-dark text-white">
+                No Data Matched
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container my-5 pt-5 d-none">
+        <div class="row">
+            <div class="col-12 offset-0 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+                <div class="modal-box rounded">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col text-center">
+                                <h4 class="mt-3">Enter Password to confirm</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control mt-3" id="floatingPassword"
+                                        placeholder="Password">
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col text-center">
+                                <button type="button" class="btn btn-primary mb-2">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid">
+        <div class="row my-5">
+            <div class="col-12 offset-0 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 data">
+                <div class="box border pb-2">
+                    <div class="image w-100">
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                            alt="user-image" id="user-image">
+                    </div>
+                    <div class="details">
+                        <h4 class="card-title text-center fw-bold my-2">Class Details</h4>
+                        <h4 class="card-text">Name: <span class="name text-center"></span></h4>
+                        <h4 class="card-text">Father: <span class="f-name text-center"></span></h4>
+                        <h4 class="card-text">Roll Number: <span class="roll-num text-center"></span></h4>
+                        <h4 class="card-text">Contact Number: <span class="number text-center"></span></h4>
+                        <h4 class="card-text">CNIC Number: <span class="cnic-num text-center"></span>
+                        </h4>
+                        <h5 class="card-text">Course Name: <span class="course text-center"></span></h5>
+                        <h5 class="card-text">Class: <span class="teacher text-center"></span></h5>
+                        <select class="form-select attendance-category d-none" id="attendance"
+                            aria-label="Default select example">
+                            <option value="present">present</option>
+                            <option value="absent">absent</option>
+                            <option value="late">late</option>
+                            <option value="leave">leave</option>
+                        </select>
+                        <button class="btn btn-dark mt-3" id="attendance-btn"
+                            onclick="attendanceStudent()">Attendance</button>
+                        <button class="btn btn-dark mt-3 d-none" id="completed-btn">Attendance Completed</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="javascript/attendance.js" type="module"></script>
+
+</body>
+
+</html>

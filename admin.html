@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="./firebase/firebase-config.js" type="module"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark">
+
+    <nav class="navbar navbar-expand-lg bg-white shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand h1 fs-3 text-dark" href="#">Saylani</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item my-1 mx-1">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-info fw-bold text-dark shadow" id="add-btn"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Add Class
+                        </button>
+                    </li>
+                    <li class="nav-item my-1 mx-1">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-info fw-bold text-dark shadow" id="add-students"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop-2">
+                            Add Student
+                        </button>
+                    </li>
+                    <li class="nav-item my-1 mx-1">
+                        <!-- Button trigger modal -->
+                        <a>
+                            <button type="button" class="btn btn-outline-info fw-bold text-dark shadow" id="attendance">
+                                Attendance Page
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form class="d-flex" role="search">
+            <button class="btn btn-outline-success me-auto ms-3" type="submit">Logout</button>
+        </form>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center fs-1 bg-success text-white">
+                Available Classes
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+        <div class="row class-data">
+            <!-- Show Available Class -->
+        </div>
+    </div>
+
+
+    <!-- Modal For Classes-->
+    <div class="modal fade shadow" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Class</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col my-1">
+                                <h6 class="ms-1 my-1">Class Timings</h6>
+                                <select class="form-select class-timing" aria-label="Default select example">
+                                    <option selected>Open this select timings</option>
+                                    <option value="9 to 11">9 to 11</option>
+                                    <option value="11 to 1">11 to 1</option>
+                                    <option value="6 to 8">6 to 8</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-1">
+                                <h6 class="ms-1 my-1">Schedule of classes</h6>
+                                <select class="form-select class-schedule" aria-label="Default select example">
+                                    <option selected>Open this select class Schedule</option>
+                                    <option value="Monday Wednesday Friday">Monday Wednesday Friday</option>
+                                    <option value="Tuesday Thursday Saturday">Tuesday Thursday Saturday</option>
+                                    <option value="Sunday">Sunday</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-1">
+                                <h6 class="ms-1 my-1">Teachers Name</h6>
+                                <select class="form-select teachers-name" aria-label="Default select example">
+                                    <option selected>Open this select teacher's name</option>
+                                    <option value="Sir Haider">Sir Haider</option>
+                                    <option value="Sir Ghous">Sir Ghous</option>
+                                    <option value="Sir Ishaq">Sir Ishaq</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-1">
+                                <h6 class="ms-1 my-1">Section Timings</h6>
+                                <select class="form-select section-timing" aria-label="Default select example">
+                                    <option selected>Open this select class timings</option>
+                                    <option value="Section A">Scetion A</option>
+                                    <option value="Section B">Section B</option>
+                                    <option value="Section C">Section C</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-1">
+                                <h6 class="ms-1 my-1">Course Name</h6>
+                                <select class="form-select course-name" aria-label="Default select example">
+                                    <option selected>Open this select course name</option>
+                                    <option value="Web And Mobile">Web And Mobile</option>
+                                    <option value="Python Programming">Python Programming</option>
+                                    <option value="Graphic Designing">Graphic Designing</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-1">
+                                <h6 class="ms-1 my-1">Batch Name</h6>
+                                <select class="form-select batch-number" aria-label="Default select example">
+                                    <option selected>Open this select batch name</option>
+                                    <option value="Batch 6">Batch 6</option>
+                                    <option value="Batch 7">Batch 7</option>
+                                    <option value="Batch 8">Batch 8</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-start main-error mt-1"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info" id="add-class">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal For Student-->
+    <div class="modal fade shadow" id="staticBackdrop-2" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Student</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control name" id="floatingInputName"
+                                        placeholder="AAAAAAAA">
+                                    <label for="floatingInputName">Enter Your Name</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control f-name" id="floatingInputFatherName"
+                                        placeholder="AAAAAAAA">
+                                    <label for="floatingInputFatherName">Enter Your Father Name</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control roll-number" id="floatingInputNumber"
+                                        placeholder="AAAAAAAA">
+                                    <label for="floatingInputNumber">Enter Your Roll Number</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control contact-number"
+                                        id="floatingInputContactNumber" placeholder="AAAAAAAA">
+                                    <label for="floatingInputContactNumber">Enter Your Contact Number</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control cnic-number" id="floatingInputCNICNumber"
+                                        placeholder="AAAAAAAA">
+                                    <label for="floatingInputCNICNumber">Enter Your CNIC Number</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-1">
+                                <h6 class="ms-1 my-1">Course Name</h6>
+                                <select class="form-select student-course-name" aria-label="Default select example">
+                                    <!-- It will show class that admin will be make -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col my-1 mb-3">
+                                <h6 class="ms-1 my-1">Teachers Name</h6>
+                                <select class="form-select teachers-list" aria-label="Default select example">
+                                    <option selected value="Sir Haider">Sir Haider</option>
+                                    <option value="Sir Ghous">Sir Ghous</option>
+                                    <option value="Sir Ishaq">Sir Ishaq</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <input class="form-control file student-pic" type="file" id="formFile">
+
+
+
+
+
+                        <div class="row">
+                            <div class="col">
+                                <p class="text-start student-error mt-3"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-primary" id="add-student">Add Student</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal For Class Details-->
+    <div class="modal fade shadow" id="staticBackdrop-3" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-info text-white">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Class Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control py-3 my-2 class-timing-data" placeholder="Class Timing"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control py-3 my-2 class-schedule-data"
+                            placeholder="Class Schedule" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control py-3 my-2 class-teacher-data" placeholder="Teacher Name"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control py-3 my-2 section-timing-data"
+                            placeholder="Section Timing" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control py-3 my-2 batch-number-data" placeholder="Batch Number"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control py-3 my-2 course-name-data" placeholder="Course Name"
+                            aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="edit-data-error"></div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-warning" id="edit-data" onclick="editData()">Edit</button>
+                        <button type="button" class="btn btn-danger" id="delete-data"
+                            onclick="deleteData()">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="javascript/./admin.js" type="module"></script>
+</body>
+
+</html>
